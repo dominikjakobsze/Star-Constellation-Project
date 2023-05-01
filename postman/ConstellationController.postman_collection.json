@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "c03af316-fa3f-495f-a15a-3bf4e7f8ae1c",
+		"name": "ConstellationController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25685793"
+	},
+	"item": [
+		{
+			"name": "GetConstellations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/constellations",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"constellations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetConstellationById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/constellations/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"constellations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostConstellation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "tete43",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "star.png"
+						},
+						{
+							"key": "description",
+							"value": "tete2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/constellations",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"constellations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PatchConstellation",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "tete43",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "star.png"
+						},
+						{
+							"key": "description",
+							"value": "tete2",
+							"type": "text"
+						},
+						{
+							"key": "isOn",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/constellations/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"constellations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteConstellationById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/constellations/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"constellations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

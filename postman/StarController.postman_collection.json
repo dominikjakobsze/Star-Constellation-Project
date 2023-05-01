@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "4f031244-1526-4285-b12b-ed01fdb2aa8a",
+		"name": "StarController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25685793"
+	},
+	"item": [
+		{
+			"name": "GetStars",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/stars",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"stars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStarById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/stars/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"stars",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStarById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/stars/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"stars",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostStar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "tete43",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "star.png"
+						},
+						{
+							"key": "description",
+							"value": "tete2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/stars",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"stars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PatchStar",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "tete43",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "star.png"
+						},
+						{
+							"key": "description",
+							"value": "tete2",
+							"type": "text"
+						},
+						{
+							"key": "isOn",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3520/stars/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3520",
+					"path": [
+						"stars",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

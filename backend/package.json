@@ -1,0 +1,22 @@
+{
+  "name": "node_studia_backend",
+  "version": "1.0.0",
+  "description": "Projekt na studia",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js | grep -v 'Executing (default):'",
+    "dev": "rm -rf ./uploads/* && node --watch index.js | grep -v 'Executing (default):'",
+    "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --silent | grep -vE '^\\s*(console\\.log|Executing|at)\\b' | sed '/^\\s*$/d'",
+    "debug-mode-test": "NODE_ENV=test jest --forceExit --detectOpenHandles"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
+}
