@@ -5,6 +5,9 @@ const Planner = sequelize.define('Planner', {
     rain: {
         type: DataTypes.INTEGER
     },
+    fog: {
+        type: DataTypes.INTEGER
+    },
     clouds: {
         type: DataTypes.INTEGER
     },

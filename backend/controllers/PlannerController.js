@@ -93,5 +93,81 @@ router.post('/planner', upload.none(), async (req, res, next) => {
     }
 });  
 
+router.get('/planner', async (req, res, next) => {
+  try {
+    const planners = await Planner.findAll();
+    res.status(200).json({
+      status_code: 200,
+      planners: planners,
+      error: false
+    });
+  } catch (error) {
+    res.status(500).json({
+      status_code: 500,
+      message: 'Failed to retrieve planners',
+      error: true
+    });
+  }
+});
+
+router.delete('/planner/:id', async (req, res, next) => {
+  try {
+    const plannerId = req.params.id;
+    const deletedPlanner = await Planner.destroy({
+      where: {
+        id: plannerId
+      }
+    });
+
+    if (deletedPlanner) {
+      res.status(200).json({
+        status_code: 200,
+        message: 'Planner deleted successfully',
+        error: false
+      });
+    } else {
+      res.status(404).json({
+        status_code: 404,
+        message: 'Planner not found',
+        error: true
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      status_code: 500,
+      message: 'Failed to delete planner',
+      error: true
+    });
+  }
+});
+
+router.get('/planner/:id', async (req, res, next) => {
+  try {
+    const plannerId = req.params.id;
+    const planner = await Planner.findByPk(plannerId);
+
+    if (planner) {
+      res.status(200).json({
+        status_code: 200,
+        planner: planner,
+        error: false
+      });
+    } else {
+      res.status(404).json({
+        status_code: 404,
+        message: 'Planner not found',
+        error: true
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      status_code: 500,
+      message: 'Failed to retrieve planner',
+      error: true
+    });
+  }
+});
+
+
 
 module.exports = router;

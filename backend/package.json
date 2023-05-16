@@ -2,10 +2,10 @@
   "name": "node_studia_backend",
   "version": "1.0.0",
   "description": "Projekt na studia",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js | grep -v 'Executing (default):'",
-    "dev": "rm -rf ./uploads/* && node --watch index.js | grep -v 'Executing (default):'",
+    "start": "node app.js",
+    "dev": "rm -rf ./uploads/* && node --watch app.js | grep -v 'Executing (default):'",
     "test": "NODE_ENV=test jest --forceExit --detectOpenHandles --silent | grep -vE '^\\s*(console\\.log|Executing|at)\\b' | sed '/^\\s*$/d'",
     "debug-mode-test": "NODE_ENV=test jest --forceExit --detectOpenHandles"
   },
