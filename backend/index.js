@@ -1,23 +1,25 @@
 const express = require('express');
 const { sequelize, env } = require('./config/db');
-const Star = require('./models/StarModel');
-const Constellation = require('./models/ConstellationModel');
-const StarConstellation = require('./models/StarConstellation');
 const ConstellationController = require('./controllers/ConstellationController');
 const app = express();
 const StarController = require('./controllers/StarController');
 const StarConstellationController = require('./controllers/StarConstellationController');
+const PlannerController = require('./controllers/PlannerController');
 
 // Config Base Request - Response Flow
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', '*');
     next();
-  });  
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+  
 app.use(StarController);
 app.use(ConstellationController);
 app.use(StarConstellationController);
+app.use(PlannerController);
 // Serve static files from the uploads directory => uploaded images
 app.use('/uploads', express.static('uploads'));
 

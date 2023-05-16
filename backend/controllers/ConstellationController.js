@@ -35,7 +35,7 @@ router.get('/constellations', async (req, res, next) => {
 });
 
 //POST new constellation
-router.post('/constellations', upload.single('image'), async (req, res, next) => {
+router.post('/constellations', upload.single("image"), async (req, res, next) => {
     const { name, description } = req.body;
     const filePath = req.file ? req.file.filename : null;
 
