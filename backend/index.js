@@ -10,7 +10,7 @@ const PlannerController = require('./controllers/PlannerController');
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'e');
+    res.setHeader('Access-Control-Allow-Headers', '*');
     next();
 });
 app.use(express.json());
