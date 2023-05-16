@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-  
+
 app.use(StarController);
 app.use(ConstellationController);
 app.use(StarConstellationController);
@@ -26,7 +26,7 @@ app.use('/uploads', express.static('uploads'));
 if(env !== 'test') {
     // Sync Models
     sequelize
-        .sync({ force: true })
+        .sync()
         .then(() => {
             console.log('\n\n\x1b[33mAll models were synchronized successfully.\x1b[0m\n\n');
             const PORT = process.env.PORT || 3520;
